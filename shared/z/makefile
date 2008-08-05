@@ -20,17 +20,17 @@ OBJS = adler32.$(O) compress.$(O) crc32.$(O) gzio.$(O) &
 
 CLEANMASK = *.lnk *.wmp *.obj *.err *.log *.bak *.sym
 
-all: libz.lib .SYMBOLIC
- $(CP) libz.lib $(DIR)$(SEP) $(BLACKHOLE)
+all: z.lib .SYMBOLIC
+ $(CP) z.lib $(DIR)$(SEP) $(BLACKHOLE)
 
 
-libz.lib: $(OBJS)
+z.lib: $(OBJS)
  $(DC) $^@
- $(LIB) -n -fo $^@ +$(OBJS)
+ $(LIB) $(LIBOPT) $^@ +$(OBJS)
 
 
 install: .SYMBOLIC
- $(CP) libz.lib ..$(SEP)lib
+ $(CP) z.lib $(DIR)
 
 .IGNORE
 clean: .SYMBOLIC
