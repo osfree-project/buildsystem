@@ -1,0 +1,3 @@
+[submodule "jwasm/contrib"]
+	path = jwasm/contrib
+	url = https://github.com/Baron-von-Riedesel/JWasm
